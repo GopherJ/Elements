@@ -10,18 +10,18 @@ config.context = path.resolve(__dirname, '..');
 
 // Client entry
 config.entry = {
-    components: path.resolve(__dirname, '../src/main')
+    Elements: path.resolve(__dirname, '../src/main')
 };
 
 // Basic output config
 config.output = {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js',
-    library: "components",
+    library: "Elements",
     libraryTarget: "umd",
 };
 
-config.externals = ['buefy', 'vuex', 'vue'];
+config.externals = ['vue'];
 // Resolver config
 config.resolve = {
     extensions: ['.js', '.vue'],
@@ -88,7 +88,7 @@ config.module = {
 };
 process.traceDeprecation = true;
 if (process.env.NODE_ENV === 'production') {
-    config.output.filename = "components.min.js"
+    config.output.filename = "Elements.min.js"
     config.devtool = '#source-map';
 
     // Pass build environment inside bundle

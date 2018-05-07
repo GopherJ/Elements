@@ -1,15 +1,33 @@
 /* eslint-disable */
-import Filters from '../components/E'
+
+// components
+import ReturnTop from './components/ReturnTop';
+
+// directives
+import FixedTop from './directives/FixedTop';
+import Visible from './directives/Visible';
+
+
 
 const install = (Vue, options = {}) => {
+    // store
     if (options.store) {
-        options.store.registerModule('Filters', FiltersStore);
+        //
     }
 
-    Vue.component(Filters.name, Filters);
+    // components
+    Vue.component(ReturnTop.name, ReturnTop);
+
+    // directives
+    Vue.directive(FixedTop.name, FixedTop);
+    Vue.directive(Visible.name, Visible);
 };
 
 export default {
-    install,
+    install
+};
+
+export {
+    ReturnTop
 };
 
