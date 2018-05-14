@@ -22,7 +22,8 @@
     ],
     "dependencies": {
         "document-offset": "^1.0.4",
-        "vue": "^2.5.13"
+        "vue": "^2.5.13",
+        "vuex": "^3.0.1"
     },
     "devDependencies": {
         "autoprefixer": "^8.2.0",
