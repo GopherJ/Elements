@@ -1,6 +1,6 @@
 {
     "name": "vue-reusable",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Vue Reusable Components, Directives, Prototypes",
     "main": "dist/Elements.min.js",
     "scripts": {

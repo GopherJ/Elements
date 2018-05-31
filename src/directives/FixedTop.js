@@ -2,7 +2,7 @@ import '../css/index.css';
 import offset from 'document-offset';
 
 const className = 'fixed-top';
-let listener, offsetTop, top;
+let listener, offsetTop, top, width;
 
 export default {
     name: 'fixed-top',
@@ -16,20 +16,18 @@ export default {
             // save the real offset top
             if (!el.classList.contains(className)) {
                 offsetTop = offset(el).top;
+                width = el.getBoundingClientRect().width;
             }
 
             // scroll to the threshold
             if (docElem.scrollTop > offsetTop) {
-                if (!el.classList.contains(className)) {
-                    el.classList.add(className);
-                }
+                el.classList.add(className);
+                el.style.width = `${width}px`;
 
                 // calculate the top
                 el.style.top = top;
             } else {
-                if (el.classList.contains(className)) {
-                    el.classList.remove(className);
-                }
+                el.classList.remove(className);
 
                 el.style.top = null;
             }
