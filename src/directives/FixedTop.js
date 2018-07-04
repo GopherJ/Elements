@@ -20,7 +20,9 @@ export default {
             }
 
             // scroll to the threshold
-            if (docElem.scrollTop > offsetTop) {
+            const scrollTop = docElem.scrollTop || document.body.scrollTop;
+
+            if (scrollTop > offsetTop) {
                 el.classList.add(className);
                 el.style.width = `${width}px`;
 
