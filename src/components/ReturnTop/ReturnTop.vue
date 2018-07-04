@@ -90,6 +90,8 @@
 
         background-color: rgb(0, 0, 0);
         opacity: .075;
+
+        z-index: 99999999
     }
 
     .return-top.show {
@@ -110,6 +112,7 @@
 
     .arrow.up {
         transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
         -webkit-transform: rotate(-135deg);
     }
 </style>
