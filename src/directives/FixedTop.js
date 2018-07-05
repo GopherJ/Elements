@@ -15,8 +15,12 @@ export default {
 
             // save the real offset top
             if (!el.classList.contains(className)) {
-                offsetTop = offset(el).top;
-                width = el.getBoundingClientRect().width;
+                try {
+                    offsetTop = offset(el).top;
+                    width = el.getBoundingClientRect().width;
+                } catch(e) {
+                    return;
+                }
             }
 
             // scroll to the threshold
