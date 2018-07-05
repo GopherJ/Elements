@@ -1,4 +1,4 @@
-# Elements
+# VueReusable
 Vue Reusable Components, Directives, Prototypes
 
 ## Components
@@ -7,7 +7,9 @@ Vue Reusable Components, Directives, Prototypes
 
 ## Directives
 
-- `FixedTop`
+- `v-fixed-top`
+- `v-focus`
+- `v-visible`
 
 ## Prototypes
 
