@@ -20,3 +20,21 @@ Vue Reusable Components, Directives, Prototypes
 
 ## Prototypes
 
+
+## Contribute
+
+1. create your own branch on gitlab
+2. `git clone ssh://git@git.ubudu.com:10022/GopherJ/VueReusable.git`
+    1. `cd VueReusable`
+    2. `git checkout -b [branch name]`
+    3. `make changes`
+    4. `npm run build`
+    5. `git add . && git commit -m "[message]" && git push origin [branch name]`
+    6. `send PR`
+
+
+
+
+
+
+
