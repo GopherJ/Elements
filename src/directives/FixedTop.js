@@ -2,7 +2,7 @@ import '../css/index.css';
 import offset from 'document-offset';
 
 const className = 'fixed-top';
-let listener, offsetTop, top, width;
+let listener, offsetTop, top, width, onResize;
 
 export default {
     name: 'fixed-top',
@@ -10,10 +10,8 @@ export default {
         top = `${typeof binding.value === 'number' ? binding.value : 0}px`;
 
         listener = function () {
-            // docElem
             const docElem = document.documentElement || document.body;
 
-            // save the real offset top
             if (!el.classList.contains(className)) {
                 try {
                     offsetTop = offset(el).top;
@@ -23,23 +21,36 @@ export default {
                 }
             }
 
-            // scroll to the threshold
             const scrollTop = docElem.scrollTop || document.body.scrollTop;
 
-            if (scrollTop > offsetTop) {
+            if (scrollTop <= offsetTop) {
+                if (el.classList.contains(className)) {
+                    el.classList.remove(className);
+                }
+
+                el.style.width = '100%';
+            }
+
+            else {
                 el.classList.add(className);
                 el.style.width = `${width}px`;
 
-                // calculate the top
                 el.style.top = top;
-            } else {
-                el.classList.remove(className);
-
-                el.style.top = null;
             }
         };
 
+        onResize = function (ev) {
+            if (el.classList.contains(className)) {
+                el.classList.remove(className);
+            }
+
+            el.style.width = '100%';
+        };
+
+
         window.addEventListener('scroll', listener);
+
+        window.addEventListener('resize', onResize);
     },
     update: function(el, binding) {
         top = `${typeof binding.value === 'number' ? binding.value : 0}px`;
@@ -50,5 +61,7 @@ export default {
     },
     unbind: function (el) {
         window.removeEventListener('scroll', listener);
+
+        window.removeEventListener('resize', onResize);
     }
 };

@@ -10,14 +10,14 @@ config.context = path.resolve(__dirname, '..');
 
 // Client entry
 config.entry = {
-    Elements: path.resolve(__dirname, '../src/main')
+    VueReusable: path.resolve(__dirname, '../src/main')
 };
 
 // Basic output config
 config.output = {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js',
-    library: "Elements",
+    library: "VueReusable",
     libraryTarget: "umd",
 };
 
@@ -88,7 +88,7 @@ config.module = {
 };
 process.traceDeprecation = true;
 if (process.env.NODE_ENV === 'production') {
-    config.output.filename = "Elements.min.js"
+    config.output.filename = "VueReusable.min.js";
     config.devtool = '#source-map';
 
     // Pass build environment inside bundle
