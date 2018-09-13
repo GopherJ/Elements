@@ -69,11 +69,23 @@
     }
 </script>
 
-<style scoped>
+<style>
+    @keyframes show {
+        from {
+            opacity: 0;
+            transform: translateY(5px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(-10px);
+        }
+    }
+
     .return-top {
         position: fixed;
-        right: -50px;
-        bottom: 100px;
+        right: 5px;
+        bottom: 8rem;
 
         display: flex;
         display: -webkit-flex;
@@ -81,26 +93,26 @@
         align-items: center;
 
         width: 50px;
-        height: 100px;
+        height: 50px;
 
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+        border-radius: 25px;
+        opacity: 0;
 
-        transition: all 0.3s ease;
-
-        background-color: rgb(0, 0, 0);
-        opacity: .075;
+        background-color: #CDE201;
+        box-shadow: 0 0 3px;
 
         z-index: 99999999
     }
 
-    .return-top.show {
-        right: 0px;
-    }
-
     .return-top:hover {
         cursor: pointer;
-        opacity: .5;
+    }
+
+    .return-top.show {
+        animation-name: show;
+        animation-duration: 300ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     }
 
     .arrow {
