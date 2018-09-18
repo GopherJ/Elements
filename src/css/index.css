@@ -1,4 +1,6 @@
-.fixed-top {
-    position: fixed;
-    z-index: 99;
+@media screen and (min-width: 1472px) {
+    .fixed-top {
+        position: fixed;
+        z-index: 999999;
+    }
 }
