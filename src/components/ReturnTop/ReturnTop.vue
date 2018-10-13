@@ -99,13 +99,14 @@
         opacity: 0;
 
         background-color: #CDE201;
-        box-shadow: 0 0 10px #000;
 
         z-index: 99999999
     }
 
     .return-top:hover {
         cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, .2),
+                    0 4px 40px rgba(0, 0, 0, .3);
     }
 
     .return-top.show {
