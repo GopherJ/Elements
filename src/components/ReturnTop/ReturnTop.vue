@@ -99,7 +99,7 @@
         opacity: 0;
 
         background-color: #CDE201;
-        box-shadow: 0 0 3px #000000;
+        box-shadow: 0 0 10px #000;
 
         z-index: 99999999
     }

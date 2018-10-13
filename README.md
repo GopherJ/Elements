@@ -19,3 +19,5 @@ Vue Reusable Components, Directives, Prototypes
 
 
 ## Prototypes
+
+- $eventBus      :  global eventbus for transferring informations

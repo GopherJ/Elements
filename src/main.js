@@ -8,6 +8,9 @@ import FixedTop from './directives/FixedTop';
 import Visible from './directives/Visible';
 import Focus from './directives/Focus';
 
+// prototypes
+import eventBus from './prototypes/eventBus';
+
 
 
 const install = (Vue, options = {}) => {
@@ -23,6 +26,9 @@ const install = (Vue, options = {}) => {
     Vue.directive(FixedTop.name, FixedTop);
     Vue.directive(Visible.name, Visible);
     Vue.directive(Focus.name, Focus);
+
+    // prototypes
+    Vue.prototype.$eventBus = eventBus;
 };
 
 export default {
